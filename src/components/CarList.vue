@@ -4,16 +4,16 @@ const carsArray = [
   {
     brand: "BMW",
     price: "2000000",
-    year: 1994,
-    volume: 2.4,
-    color: "#FF0000",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFN0lN7T1WyAETO84V2umxeofkkkl6684bmI01rC_I&s",
-  },
+    year: "1994",
+    volume: "2.4",
+    color: '#FF0000',
+    image: "https://avatars.mds.yandex.net/i?id=7c5d6b5e6b8d062c8888b70c33656f44fc5092e4-8960812-images-thumbs&n=13"
+  }
 ]
 </script>
 
 <template>
-<section class="cars" v-for="car in carsArray" :key="car">
+<section class="car" v-for="car in carsArray" :key="car">
     <CarItem :car="car" />
 </section>
 </template>
