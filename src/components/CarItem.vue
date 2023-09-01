@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps, computed } from 'vue';
+import Chip from 'primevue/chip'; 
 
 const props = defineProps({
     car: {
@@ -26,42 +27,26 @@ function changeColor(color) {
 </script>
 
 <template>
-<div class="car">
-    <div class="photo-car"><img :src="carRemake.image" alt="car"></div>
-    
-    <div class="details-car">
-        <div class="details">
-            <div>Модель:</div>
-            <div>{{ carRemake.brand }}</div>
-        </div>
-        <div class="details">
-            <div>Цена:</div>
-            <div>{{ carRemake.price }}</div>
-        </div>
-        <div class="details">
-            <div>Год выпуска:</div>
-            <div>{{ carRemake.year }}</div>
-        </div>
-        <div class="details">
-            <div>Объем двигателя:</div>
-            <div>{{ carRemake.volume }}</div>
-        </div>
-        <div class="details">
-            <div>Цвет:</div>
-            <div :style="{ backgroundColor: carRemake.color }"></div>
-        </div>
-        <!-- <div class="details">
-            <div>КПД:</div>
-            <div :style="{ backgroundColor: carRemake.color }"></div>
-        </div> -->
-        <div class="chipes">
-        <span v-if="Number(carRemake.price.slice(0, -1)) > 100">Дорогой автомобиль</span>
-        <span v-else-if="Number(carRemake.year) < 2000">Старый</span>
-        <span v-else>Скучный</span>
-        <span v-if="changeColor(carRemake.color)">Так себе цвет</span>
-        </div>
-    </div>
-</div>
+  <Card>
+    <template #header>
+      <img :src="carRemake.image" alt="car" class="car-image" />
+    </template>
+
+    <template #title> {{ carRemake.brand }} </template>
+    <template #content>
+      <p>Цена: {{ carRemake.price }}</p>
+      <p>Год выпуска: {{ carRemake.year }}</p>
+      <p>Объем двигателя: {{ carRemake.volume }}</p>
+      <p :style="`color: ${carRemake.color}`">Цвет: {{ carRemake.color }}</p>
+    </template>
+
+    <template #footer>
+      <Chip v-if="Number(carRemake.price.slice(0, -1)) > 3000000" label="Дорогой" icon="pi pi-apple"/>
+      <Chip icon="pi pi-history" label="Старый" v-else-if="Number(carRemake.year) <= 1960"></Chip>
+      <Chip icon="pi pi-briefcase" label="Скучный" v-else></Chip>
+      <Chip icon="pi pi-eye-slash" label="Конченный цвет" v-if="changeColor(carRemake.color)"/>
+    </template>
+  </Card>
 </template>
 
 <style scoped>
