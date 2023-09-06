@@ -1,23 +1,26 @@
 <script setup>
 import CarItem from '@/components/CarItem.vue';
-const carsArray = [
-  {
-    brand: "BMW",
-    price: "2000000",
-    year: 1994,
-    volume: 2.4,
-    color: '#FF0000',
-    image: "https://avatars.mds.yandex.net/i?id=7c5d6b5e6b8d062c8888b70c33656f44fc5092e4-8960812-images-thumbs&n=13"
-  }
-]
+import { defineProps } from 'vue';
+
+defineProps  ({
+    cars: {
+        type: Array,
+        required: true,
+    },
+})
 </script>
 
 <template>
-<section class="car" v-for="car in carsArray" :key="car">
-    <CarItem :car="car" />
-</section>
+    <section class="flexTemplate">
+        <section class="cars" v-for="item in cars" :key="item">
+            <CarItem :car="item" />
+        </section>
+    </section>
 </template>
 
 <style scoped>
-
+.flexTemplate {
+    display: flex;
+    margin-top: 20px;
+}
 </style>
