@@ -35,6 +35,8 @@ const cars = [
         image: "https://www.pngmart.com/files/9/Lexus-PNG-Free-Download.png"
     },
 ]
+
+
 </script>
 
 <template>

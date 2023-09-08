@@ -28,6 +28,7 @@ function changeColor(color) {
 } 
 </script>
 <template>
+<!-- <<<<<<< HEAD -->
   <Card style="width: 30em; " class="card">
     <template #header>
       <img :src="carRemake.image" alt="car" class="car-image" />

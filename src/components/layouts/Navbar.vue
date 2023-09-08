@@ -2,6 +2,9 @@
   <button type="button" class="p-link p-ml-auto" @click="googleRegister">
     <i class="pi pi-user"></i>
   </button>
+  <button type="button" class="p-link p-ml-auto" @click="createAuto">
+    <i class="pi pi-plus"></i>
+  </button>
 </template>
 
 <script setup>
