@@ -16,16 +16,19 @@ export const useAuto = () => {
 
   async function createAuto() {
     loading.value.newAuto = true
+
     newAuto.value = {
       name: 'Toyota',
       model: 'Corolla',
     }
-    console.log(newAuto.value)
-    const columns = collection(db, 'autos')
-    console.log(columns)
-    const docRef = await addDoc(columns, newAuto.value)
-    console.log(docRef)
-    return docRef.id
+
+    try {
+      await addDoc(collection(db, 'autos'), newAuto.value).then(() => {
+        console.log('Cars added')
+      })
+    } catch (e) {
+      console.error('Error: ', e)
+    }
   }
 
   return {
