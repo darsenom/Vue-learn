@@ -1,10 +1,12 @@
 import './assets/main.css' 
- 
+
 import PrimeVue from 'primevue/config'; 
 // import 'primevue/resources/themes/saga-blue/theme.css'
 import 'primevue/resources/primevue.min.css' 
 import 'primeicons/primeicons.css'; 
 import 'primevue/resources/themes/arya-purple/theme.css'
+import Sidebar from 'primevue/sidebar';
+
  
 
 
@@ -35,5 +37,10 @@ const app = createApp(App)
 app.use(router) 
 app.use(PrimeVue); 
  
+import ToastService from 'primevue/toastservice';
+app.use(ToastService);
+
 app.mount('#app')
+
+
 

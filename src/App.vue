@@ -6,6 +6,7 @@ import CarList from '@/components/CarList.vue';
 import CarTable from '@/components/CarTable.vue';
 
 
+
 const cars = [
     {
         brand: "BMW",
@@ -40,7 +41,7 @@ const cars = [
 </script>
 
 <template>
- 
+
     <Navbar />
     <CarList :cars="cars"/>
     <CarTable :cars="cars"/>
