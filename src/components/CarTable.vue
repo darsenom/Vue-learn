@@ -37,32 +37,18 @@ watch(cars, () => {
 })
 
 const carColumns = [
-    {
-        field: 'brand',
-        header: 'Марка',
-    },
-    {
-        field: 'price',
-        header: 'Цена',
-    },
-    {
-        field: 'year',
-        header: 'Год выпуска',
-    },
-    {
-        field: 'volume',
-        header: 'Объем двигателя',
-    },
-    {
-        field: 'color',
-        header: 'Цвет',
-    },
-    {
-        field: 'criticScore',
-        header: 'Оценка критика',
-    },
+  { field: 'brand', header: 'Бренд' },
+  { field: 'price', header: 'Цена' },
+  { field: 'year', header: 'Год производства' },
+  { field: 'age', header: 'Возвраст' },
+  { field: 'volume', header: 'Объем' },
+  { field: 'color', header: 'Цвет' },
+  { field: 'saled', header: 'Продано' },
+  { field: 'city', header: 'Город' },
+  { field: 'carcase', header: 'Кузов' },
+  { field: 'gear', header: 'Коробка' },
+  { field: 'travel', header: 'Пробег' },
 ]
-
 const numberMarks = [
     {
         mark: 0,

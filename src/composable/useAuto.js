@@ -34,4 +34,19 @@ export const useAuto = () => {
   return {
     createAuto,
   }
+
+  async function getAutoList() {
+    loading.value.autoList = true
+    try {
+      const querySnapshot = await getDocs(collection(db, 'autos'))
+      querySnapshot.forEach((doc) => {
+        autoList.value.push(doc.data())
+      })
+    } catch (e) {
+      console.error('Error: ', e)
+    } finally {
+      loading.value.autoList = false
+    }
+  }
+
 }

@@ -1,10 +1,7 @@
 <template>
-  <button type="button" class="p-link p-ml-auto" @click="googleRegister">
-    <i class="pi pi-user"></i>
-  </button>
-  <button type="button" class="p-link p-ml-auto" @click="createAuto">
-    <i class="pi pi-plus"></i>
-  </button>
+  <div class="navbar">
+  
+  
 
   <div class="card flex justify-content-center">
     <Sidebar v-model:visible="visible">
@@ -23,11 +20,24 @@
     </Sidebar>
     <Button icon="pi pi-arrow-right" @click="visible = true"/>
   </div>
-  
 
-        <Toast />
-            <div label="Success" severity="success" @click="showSuccess">
-          </div>
+
+  <div class="rightSide">
+  <button type="button" class="p-link telegram">
+    <a class="pi pi-telegram" href="https://telegram.me/ВашеИмяПользователя" target="_blank"></a>
+  </button>
+
+  <button type="button" class="p-link p-ml-auto" @click="createAuto">
+    <i class="pi pi-plus"></i>
+  </button>
+
+  <button type="button" class="p-link p-ml-auto" @click="googleRegister">
+    <i class="pi pi-user"></i>
+  </button>
+</div>
+</div>
+  <Toast />
+    <div label="Success" severity="success" @click="showSuccess"></div>
 
 
   
@@ -58,6 +68,22 @@ const { auto, createAuto } = useAuto()
 onMounted(async () => {
   await createAuto()
 })
+
+// const transitionTelegram = () => {
+//   const auth = getAuth()
+//   const provider = new GoogleAuthProvider()
+
+//   signInWithPopup(auth, provider)
+//     .then((userCredential) => {
+//       const user = userCredential.user
+//       localStorage.setItem('user', JSON.stringify(user))
+//     })
+//     .catch((error) => {
+//       const errorCode = error.code
+//       const errorMessage = error.message
+//       console.log(errorCode, errorMessage)
+//     })
+// }
 
 const googleRegister = () => {
   const auth = getAuth()
@@ -164,8 +190,22 @@ const toast = useToast();
 onMounted(async () => {
   await showSuccess()
 })
+
 const showSuccess = () => {
     toast.add({ severity: 'success', summary: 'Success Message', detail: 'Message Content', life: 3000 });
 };
 
 </script>
+
+<style>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rightSide {
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 10%;
+}
+</style>

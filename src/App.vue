@@ -2,7 +2,7 @@
 import Navbar from '@/components/layouts/Navbar.vue';
 import CarList from '@/components/CarList.vue';
 // import Navbar from '@/components/Navbar.vue';
-// import Footer from '@/components/Footer.vue';
+import Footer from '@/components/Footer.vue';
 import CarTable from '@/components/CarTable.vue';
 
 
