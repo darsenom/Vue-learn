@@ -6,7 +6,7 @@ import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css'; 
 import 'primevue/resources/themes/arya-purple/theme.css'
 import Sidebar from 'primevue/sidebar';
-
+import router from '@/router/index' 
  
 
 
@@ -30,7 +30,7 @@ initializeApp(firebaseConfig);
 
 import { createApp } from 'vue' 
 import App from './App.vue' 
-import router from './router' 
+
  
 const app = createApp(App) 
  

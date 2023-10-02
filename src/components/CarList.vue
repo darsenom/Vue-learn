@@ -8,6 +8,10 @@ defineProps  ({
         required: true,
     },
 })
+
+function goToCarUrl(id) {
+  router.push({ name: 'car', params: { id } })
+}
 </script>
 
 <template>

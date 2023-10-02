@@ -4,6 +4,7 @@ import CarList from '@/components/CarList.vue';
 // import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 import CarTable from '@/components/CarTable.vue';
+import router from '@/router';
 
 
 
@@ -41,7 +42,7 @@ const cars = [
 </script>
 
 <template>
-
+    <router-view></router-view>
     <Navbar />
     <CarList :cars="cars"/>
     <CarTable :cars="cars"/>
