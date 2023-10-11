@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import CardIdPage from '@/views/CardIdPage.vue'
+import CardPage from '@/views/CardPage.vue'
+import CarTablePage from '@/views/CarTablePage.vue'
 
 
 const router = createRouter({
@@ -13,9 +15,21 @@ const router = createRouter({
     },
 
     {
-      path: '/car/:id',
+      path: '/cardpage/:id',
       name: 'cardId',
       component: CardIdPage
+    },
+    
+    {
+      path: '/cardpage',
+      name: 'cardPage',
+      component: CardPage
+    },   
+
+    {
+      path: '/cardtable',
+      name: 'CarTable',
+      component: CarTablePage
     },
   ]
 })

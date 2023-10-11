@@ -21,6 +21,9 @@
     <Button icon="pi pi-arrow-right" @click="visible = true"/>
   </div>
 
+  <router-link to='/CardPage'>Каталог</router-link>
+  <router-link to='/CardTable'>Table</router-link>
+
 
   <div class="rightSide">
   <button type="button" class="p-link telegram">
